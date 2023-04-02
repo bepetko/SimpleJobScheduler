@@ -170,12 +170,11 @@ namespace SimpleJobScheduler.Controllers
             }
             catch (HttpRequestException ex) when (ex.InnerException is null)
             {
-                // malrformed url
                 var jobExecutionHistory = new JobsHistory
                 {
                     ExecutionDate = DateTime.Now,
                     StatusCode = (int)HttpStatusCode.BadRequest,
-                    Response = $"Url malrformed! [{ex.Message}]",
+                    Response = $"Url malformed! [{ex.Message}]",
                     JobId = job.Id,
                     Success = false
                 };
