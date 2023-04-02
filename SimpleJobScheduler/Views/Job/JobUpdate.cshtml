@@ -1,0 +1,50 @@
+﻿@model SimpleJobScheduler.Models.JobUpdateViewModel
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h1>Updating job: @Model.Name</h1>
+                <h5>Id: @Model.Id</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" action="Add" class="mt-2">
+                    <div class="form-group">
+                        <label for="Name" class="form-label">Id</label>
+                        <input type="text" class="form-control" asp-for="Id" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" asp-for="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description" class="form-label">Description</label>
+                        <input type="text" class="form-control" asp-for="Description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Url" class="form-label">Url</label>
+                        <input type="text" class="form-control" asp-for="Url" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Interval" class="form-label">Interval</label>
+                        <input type="number" class="form-control" asp-for="Interval" />
+                    </div>
+                    <div class="form-group">
+                        <label for="DateOfLastStart" class="form-label">Date and Time of the last Execution</label>
+                        <input type="datetime" class="form-control" asp-for="DateOfLastStart" readonly />
+                    </div>
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-danger"
+                                asp-action="Delete"
+                                asp-controller="Job">
+                            Delete
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

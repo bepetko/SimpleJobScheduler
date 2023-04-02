@@ -1,0 +1,16 @@
+﻿@model SimpleJobScheduler.Models.JobHistoryViewModel
+
+
+<h1>Showing job history for: @Model.JobName</h1>
+<h4>GUID: @Model.JobId</h4>
+
+@foreach (var jobHistory in Model.JobExecutionHistoryList)
+{
+    <div class="card text-white @(jobHistory.Success ? "bg-success" : "bg-danger") mb-3">
+        <div class="card-header">@jobHistory.ExecutionDate.ToString("dd-MM-yyyy HH:mm:ss")</div>
+        <div class="card-body">
+            <h5 class="card-title">Code: @jobHistory.StatusCode</h5>
+            <p class="card-text">@jobHistory.Response</p>
+        </div>
+    </div>
+}

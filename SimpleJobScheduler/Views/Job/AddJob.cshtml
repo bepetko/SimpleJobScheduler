@@ -1,0 +1,32 @@
+﻿@model SimpleJobScheduler.Models.AddJobViewModel
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h1>Add new job</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" action="AddJob" class="mt-2">
+                    <div class="form-group">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" asp-for="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description" class="form-label">Description</label>
+                        <input type="text" class="form-control" asp-for="Description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Url" class="form-label">Url</label>
+                        <input type="text" class="form-control" asp-for="Url" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Interval" class="form-label">Interval</label>
+                        <input type="number" class="form-control" asp-for="IntervalInMinutes" min="1"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
